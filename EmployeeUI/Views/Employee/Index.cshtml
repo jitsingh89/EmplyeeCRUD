@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Add Employee";
+}
+<div align="center">
+    <br /><br />
+    <table cellpadding="2" class="table" cellspacing="2" border="1">
+        <tr>
+            <td colspan="5">
+                @Html.ActionLink("Add New Employee", "Create", "Employee", new { area = "" }, null)
+            </td>
+        </tr>
+        <tr class="btn-primary">
+            <th>Employee Code</th>
+            <th> First Name</th>
+            <th> Last Name</th>
+            <th> Designation</th>
+            <th> Salary</th>
+        </tr>
+        @foreach (var emp in ViewData["employees"] as IEnumerable<EmployeeUI.Models.EmployeeModel>)
+        {
+            <tr>
+                <td>
+                    @emp.EmpCode
+                </td>
+                <td>
+                    @emp.FirstName
+                </td>
+                <td>
+                    @emp.LastName
+                </td>
+                <td>
+                    @emp.Designation
+                </td>
+                <td>
+                    @emp.Salary
+                </td>
+                <td>
+                    <a onclick="return confirm('Do you want to Delete?')"
+                       href="@Url.Action("Delete","employee",new {empCode= emp.EmpCode})">Delete</a> ||
+                    <a href="@Url.Action("Edit","employee",new {empCode= emp.EmpCode})">Edit</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

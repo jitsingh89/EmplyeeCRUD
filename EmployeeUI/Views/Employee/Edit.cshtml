@@ -1,0 +1,60 @@
+﻿
+@model EmployeeUI.ViewModel.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div align="center" width="500px">
+    @using (Html.BeginForm("Edit", "employee", FormMethod.Post))
+    {
+        <table class="table">
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Employee.FirstName)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Employee.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Employee.LastName)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Employee.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Employee.Designation)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Employee.Designation)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Employee.Salary)
+                </td>
+
+                <td>
+                    @Html.TextBoxFor(model => model.Employee.Salary)
+                </td>
+            </tr>
+            <tr>
+                <td> </td>
+
+                <td>
+                    <input type="submit" value="Update" /> &nbsp; <a class="btn-primary" href="@Url.Action("Index ","employee ")"> Back </a>
+                    @Html.HiddenFor(model => model.Employee.EmpCode)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
