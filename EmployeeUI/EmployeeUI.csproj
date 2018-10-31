@@ -168,6 +168,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ScreenShot\employeeapi.PNG" />
+    <Content Include="ScreenShot\employeeDelete.PNG" />
+    <Content Include="ScreenShot\employeeindex.PNG" />
+    <Content Include="ScreenShot\employee_create.PNG" />
+    <Content Include="ScreenShot\employee_create_validation.PNG" />
+    <Content Include="ScreenShot\employee_edit.PNG" />
+    <Content Include="ScreenShot\employee_edit_validation.PNG" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

@@ -5,11 +5,16 @@
     ViewBag.Title = "Edit";
 }
 
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
 <h2>Edit</h2>
 
 <div align="center" width="500px">
     @using (Html.BeginForm("Edit", "employee", FormMethod.Post))
     {
+        @Html.ValidationSummary(true)
         <table class="table">
             <tr>
                 <td>
@@ -18,6 +23,7 @@
 
                 <td>
                     @Html.TextBoxFor(model => model.Employee.FirstName)
+                    @Html.ValidationMessageFor(model => model.Employee.FirstName)
                 </td>
             </tr>
             <tr>
@@ -27,6 +33,7 @@
 
                 <td>
                     @Html.TextBoxFor(model => model.Employee.LastName)
+                    @Html.ValidationMessageFor(model => model.Employee.LastName)
                 </td>
             </tr>
             <tr>
@@ -51,7 +58,8 @@
                 <td> </td>
 
                 <td>
-                    <input type="submit" value="Update" /> &nbsp; <a class="btn-primary" href="@Url.Action("Index ","employee ")"> Back </a>
+                    <input type="submit" value="Update" /> &nbsp;
+                    @Html.ActionLink("Back", "Index", "Employee")
                     @Html.HiddenFor(model => model.Employee.EmpCode)
                 </td>
             </tr>

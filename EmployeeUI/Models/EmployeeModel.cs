@@ -10,11 +10,14 @@ namespace EmployeeUI.Models
     {
         [Display(Name = "EmployeeCode")]
         public int EmpCode { get; set; }
-
-        [Display(Name = "FirstName")]
+        
         [Required]
+        [StringLength(50, MinimumLength = 3)]
+        [Display(Name = "FirstName")]
         public string FirstName { get; set; }
-
+        
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
         [Display(Name = "LastName")]
         public string LastName { get; set; }
 
